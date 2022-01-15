@@ -21,9 +21,7 @@ const Listing = () => {
 
   useEffect(() => {
     axios
-      .get<MoviePage>(
-        `${BASE_URL}/movies?size=12&page=${pageNumber}&sort=title`
-      )
+      .get<MoviePage>(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)
       .then((response) => setPage(response.data));
   }, [pageNumber]);
 
